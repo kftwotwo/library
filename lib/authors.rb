@@ -7,15 +7,23 @@ class Author
  end
 
  class << self
-   def all
-    returned_authors = DB.exec('SELECT * FROM authors;')
-    authors = []
-    returned_authors.each do |author|
-      name = author[@name]
-      id = author[@id].to_i
-      authors.push(author)
+    def all
+      returned_authors = DB.exec('SELECT * FROM authors;')
+      authors = []
+      returned_authors.each do |author|
+        name = author[@name]
+        id = author[@id].to_i
+        authors.push(author)
+      end
+      authors
     end
-    authors
-   end
- end
+  end
+
+  def ==(other)
+    @name == other.name && @id == other.id
+  end
+
+  def save
+   DB.exec("INSERT INTO authors (name) VALUES ('#{@name}') RETURNING id;")
+  end
 end
