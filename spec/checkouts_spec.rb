@@ -19,4 +19,13 @@ describe(Checkout) do
       expect(@checkout.checkout_date).to eq (checkout)
     end
   end
+
+  describe('#return') do
+    it "will show the returned date" do
+      checkout = Time.new.to_s
+      checkout = checkout.split(" ")
+      checkout = checkout.first
+      expect(@checkout.checkout_date).to eq (checkout)
+    end
+  end
 end

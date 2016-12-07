@@ -11,4 +11,9 @@ class Checkout
     checkout = checkout.first
   end
 
+  def return
+    checkout = Time.new.to_s
+    checkout = checkout.split(" ")
+    checkout = checkout.first
+  end
 end
