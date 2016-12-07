@@ -1,4 +1,5 @@
 require("rspec")
+require('pry')
 require("./lib/authors")
 require("./lib/books")
 require("./lib/checkouts")
