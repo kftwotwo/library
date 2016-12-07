@@ -5,4 +5,10 @@ class Checkout
     @id = attrs[:id]
   end
 
+  def checkout_date
+    checkout = Time.new.to_s
+    checkout = checkout.split(" ")
+    checkout = checkout.first
+  end
+
 end
