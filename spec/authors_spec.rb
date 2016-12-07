@@ -13,7 +13,18 @@ describe(Author) do
     end
   end
 
+  describe('#save') do
+    it "will save into the database" do
+      @andrew.save()
+      expect(Author.all).to eq [@andrew]
+    end
+  end
 
+  describe(".all") do
+    it "will return empty" do
+      expect(Author.all()).to eq([])
+    end
+  end
 end
 
 # TODO: save
