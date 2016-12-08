@@ -40,6 +40,6 @@ class Book
   end
 
   def delete
-    DB.exec("DELETE FROM books")
+    DB.exec("DELETE FROM books WHERE title = '#{@title}'")
   end
 end

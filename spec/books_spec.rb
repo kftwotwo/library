@@ -63,4 +63,15 @@ describe(Book) do
       expect(Book.authors(book.first['id']).count).to eq 1
     end
   end
+
+  describe('#delete') do
+    it "will delete a book" do
+      @book = Book.new({:title => "Desert_Solitaire"})
+      @book.save
+      @book2 = Book.new({:title => "Nemo"})
+      @book2.save
+      @book.delete
+      expect(Book.all).to eq [{"id"=>"2", "title"=>"Nemo"}]
+    end
+  end
 end
