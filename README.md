@@ -2,7 +2,7 @@
 
 #### You can add or update books in the select, 2016-12-7
 
-#### By [Kevin Finley](http://www.kfinley.com), Andrew {last_name}
+#### By [Kevin Finley](http://www.kfinley.com), Andrew {last_name }
 
 ## Description
 
