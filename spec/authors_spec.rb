@@ -32,4 +32,12 @@ describe(Author) do
       expect(Author.all).to be_an_instance_of(Array)
     end
   end
+
+  describe('.find') do
+    it "will find a author" do
+      @author = Author.new({:first_name => 'Bobbie', :last_name => 'Maggie'})
+      author = @author.save
+      expect(Author.find(@author.last_name).first['id']).to eq '1'
+    end
+  end
 end

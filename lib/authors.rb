@@ -16,6 +16,10 @@ class Author
       end
       authors
     end
+
+    def find(last_name)
+      DB.exec("SELECT * FROM authors WHERE last_name = '#{last_name}';")
+    end
   end
 
   def ==(other)
