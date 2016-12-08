@@ -1,8 +1,9 @@
 class Author
- attr_reader(:name, :id)
+ attr_reader(:first_name, :last_name, :id)
 
  def initialize(attrs)
-   @name = attrs[:name]
+   @first_name = attrs[:first_name]
+   @last_name = attrs[:last_name]
    @id = attrs[:id]
  end
 
@@ -11,8 +12,6 @@ class Author
       returned_authors = DB.exec('SELECT * FROM authors;')
       authors = []
       returned_authors.each do |author|
-        name = author[@name]
-        id = author[@id].to_i
         authors.push(author)
       end
       authors
@@ -20,10 +19,10 @@ class Author
   end
 
   def ==(other)
-    @name == other.name && @id == other.id
+    @first_name == other.first_name && @last_name == other.last_name && @id == other.id
   end
 
   def save
-   DB.exec("INSERT INTO authors (name) VALUES ('#{@name}') RETURNING id;")
+   DB.exec("INSERT INTO authors (first_name, last_name) VALUES ('#{@first_name}', '#{@last_name}') RETURNING id;")
   end
 end

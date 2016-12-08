@@ -12,7 +12,7 @@ RSpec.configure do |config|
   config.after(:each) do
     DB.exec("DELETE FROM authors *;")
     DB.exec("DELETE FROM books *;")
-    DB.exec("DELETE FROM checkout *;")
+    DB.exec("DELETE FROM checkouts *;")
     DB.exec("DELETE FROM patrons *;")
   end
 end

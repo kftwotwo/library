@@ -2,13 +2,14 @@ require('spec_helper')
 
 describe(Author) do
   before :each do
-    @author = Author.new({:name => 'andrew'})
-    @author2 = Author.new({:name => 'andrew'})
+    @author = Author.new({:first_name => 'andrew', :last_name => 'joe'})
+    @author2 = Author.new({:first_name => 'andrew', :last_name => "joe"})
   end
 
   describe('#initialize') do
-    it "will initialize name and id" do
-      expect(@author2.name).to eq 'andrew'
+    it "will initialize name, last and id" do
+      expect(@author2.first_name).to eq 'andrew'
+      expect(@author2.last_name).to eq 'joe'
       expect(@author2.id).to eq nil
     end
   end
