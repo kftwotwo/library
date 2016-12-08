@@ -30,7 +30,7 @@ class Book
       DB.exec("SELECT authors.first_name, authors.last_name FROM books JOIN authors_books ON (books.id = authors_books.book_id) JOIN authors ON (authors.id = authors_books.author_id) WHERE books.id = #{id};")
     end
   end
-  
+
   def ==(other)
     @title == other.title && @id == other.id
   end
@@ -39,4 +39,7 @@ class Book
    DB.exec("INSERT INTO books (title) VALUES ('#{@title}') RETURNING id;")
   end
 
+  def delete
+    DB.exec("DELETE FROM books")
+  end
 end

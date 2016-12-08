@@ -2,7 +2,7 @@
 
 #### You can add or update books in the select, 2016-12-7
 
-#### By [Kevin Finley](http://www.kfinley.com), Andrew {last_name }
+#### By [Kevin Finley](http://www.kfinley.com), Andrew Accuardi
 
 ## Description
 
@@ -10,7 +10,7 @@ This application you can add, update, or delete books and search by author or ti
 
 ## Setup/Installation Requirements
 
-Go to github and clone the repository `https://github.com/kftwotwo/library_2_day.git`, `https://github.com/{username}/{project}.git`.  
+Go to github and clone the repository `https://github.com/kftwotwo/library_2_day.git`, `https://github.com/accua/library.git`.  
 Once the repository is cloned:
 ```
 $ git clone library_2_day
@@ -37,11 +37,12 @@ Enter the following psql commands below:
 
 ## Known Bugs
 
-If you notice any bugs or problems you can fill out an issue on [Kevin's](http://www.github.com/kftwotwo/library_2_day/issue), or [Andrews](http://www.github.com/kftwotwo/library_2_day/issue) or you can clone one of the projects work on it yourself!
+If you notice any bugs or problems you can fill out an issue on [Kevin's](http://www.github.com/kftwotwo/library_2_day/issue), or [Andrews](http://www.github.com/accua/library/issue) or you can clone one of the projects work on it yourself!
 
 ## Contact details
 Here is Kevin's email kf.two.two@gmail.com
-Here is Andrew's email {email}@gmail.com
+
+Here is Andrew's email andreww716@gmail.com
 
 ## Contribute
 
@@ -49,9 +50,9 @@ Kevin's Issue Tracker: https://github.com/kftwotwo/library_2_day/issues
 
 Kevin's Source Code: https://github.com/kftwotwo/library_2_day
 
-Andrew's Issue Tracker: https://github.com/{username}/{project}/issues
+Andrew's Issue Tracker: https://github.com/accua/library/issues
 
-Andrew's Source Code: https://github.com/{username}/{project}
+Andrew's Source Code: https://github.com/accua/library
 
 
 ## Technologies Used
@@ -65,4 +66,4 @@ Postgress
 
 *This is under a MIT License*
 
-Copyright (c) 2016 **_Kevin Finley, Andrew {last_name}_**
+Copyright (c) 2016 **_Kevin Finley, Andrew Accuardi_**
