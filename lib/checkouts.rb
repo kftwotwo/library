@@ -14,7 +14,7 @@ class Checkout
   end
 
   def due_date
-    new_date = DateTime.now
+    new_date = DateTime.now + 30
   end
 
 

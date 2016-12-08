@@ -27,7 +27,7 @@ describe(Checkout) do
 
   describe('#due_date') do
     it "will add a month to the current date" do
-      new_date = DateTime.now
+      new_date = DateTime.now + 30
       expect(@checkout.due_date).to be_within(0.2).of new_date
     end
   end
