@@ -17,6 +17,10 @@ class Book
       end
       books
     end
+
+    def book_checkouts
+      DB.exec('SELECT books.title, checkouts.due_date, checkouts.return, checkouts.checkout_date FROM books JOIN books_checkout ON (books.id = books_checkout.book_id) JOIN checkouts ON (checkouts.id = books_checkout.checkout_it) WHERE books.id = 1;')
+    end
   end
 
   def ==(other)
