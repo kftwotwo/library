@@ -6,14 +6,16 @@ class Checkout
   end
 
   def checkout_date
-    checkout = DateTime.new
+    checkout = DateTime.now
   end
-
+  #
   def return
-    return_date = DateTime.new
+    return_date = DateTime.now
   end
 
   def due_date
-    new_date = DateTime.new
+    new_date = DateTime.now
   end
+
+
 end

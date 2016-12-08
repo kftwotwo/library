@@ -13,21 +13,22 @@ describe(Checkout) do
 
   describe('#checkout_date') do
     it "will show the checked out date" do
-      checkout = DateTime.new
-      expect(@checkout.checkout_date).to eq(checkout)
+      checkout = DateTime.now
+      expect(@checkout.checkout_date).to be_within(0.2).of checkout
     end
   end
 
   describe('#return') do
     it "will show the returned date" do
-      return_date = DateTime.new
-      expect(@checkout.return).to eq (return_date)
+      return_date = DateTime.now
+      expect(@checkout.return).to be_within(0.2).of return_date
     end
   end
 
   describe('#due_date') do
     it "will add a month to the current date" do
-      expect(@checkout.due_date).to eq (DateTime.new)
+      new_date = DateTime.now
+      expect(@checkout.due_date).to be_within(0.2).of new_date
     end
   end
 end
