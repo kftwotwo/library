@@ -1,0 +1,13 @@
+<h3>Here are all the books that we have in stock:</h3>
+
+<% if @books.any?() %>
+  <p>Click on a book to see information about it</p>
+
+  <ul>
+    <% @books.each do |book| %>
+      <li><a href="/books/<%= book.id() %>"><%= book.title() %></a></li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>There are no books added yet in stock!</p>
+<% end %>

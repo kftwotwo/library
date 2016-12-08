@@ -74,4 +74,13 @@ describe(Book) do
       expect(Book.all).to eq [{"id"=>"2", "title"=>"Nemo"}]
     end
   end
+
+  describe("#update") do
+    it("wiil update book title in the database") do
+      book = Book.new({:title => "Desert_Solitaire"})
+      book.save
+      book.update({:title => "Nemo"})
+      expect(book.title).to eq "Nemo"
+    end
+  end
 end

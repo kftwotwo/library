@@ -36,10 +36,15 @@ class Book
   end
 
   def save
-   DB.exec("INSERT INTO books (title) VALUES ('#{@title}') RETURNING id;")
+   DB.exec("INSERT INTO books (title) VALUES ('#{@title}');")
   end
 
   def delete
     DB.exec("DELETE FROM books WHERE title = '#{@title}'")
+  end
+
+  def update(attributes)
+    @title = attributes[:title]
+    DB.exec("UPDATE books SET title = '#{@title}' RETURNING id;")
   end
 end
