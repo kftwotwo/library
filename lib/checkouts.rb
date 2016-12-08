@@ -6,14 +6,14 @@ class Checkout
   end
 
   def checkout_date
-    checkout = Time.new.to_s
-    checkout = checkout.split(" ")
-    checkout = checkout.first
+    checkout = DateTime.new
   end
 
   def return
-    checkout = Time.new.to_s
-    checkout = checkout.split(" ")
-    checkout = checkout.first
+    return_date = DateTime.new
+  end
+
+  def due_date
+    new_date = DateTime.new
   end
 end

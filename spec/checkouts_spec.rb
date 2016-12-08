@@ -13,19 +13,21 @@ describe(Checkout) do
 
   describe('#checkout_date') do
     it "will show the checked out date" do
-      checkout = Time.new.to_s
-      checkout = checkout.split(" ")
-      checkout = checkout.first
-      expect(@checkout.checkout_date).to eq (checkout)
+      checkout = DateTime.new
+      expect(@checkout.checkout_date).to eq(checkout)
     end
   end
 
   describe('#return') do
     it "will show the returned date" do
-      checkout = Time.new.to_s
-      checkout = checkout.split(" ")
-      checkout = checkout.first
-      expect(@checkout.checkout_date).to eq (checkout)
+      return_date = DateTime.new
+      expect(@checkout.return).to eq (return_date)
+    end
+  end
+
+  describe('#due_date') do
+    it "will add a month to the current date" do
+      expect(@checkout.due_date).to eq (DateTime.new)
     end
   end
 end
