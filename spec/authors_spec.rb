@@ -40,4 +40,15 @@ describe(Author) do
       expect(Author.find(@author.last_name).first['id']).to eq '1'
     end
   end
+
+  describe('.books') do
+    it "will show book id to the joined table authors book" do
+      @author = Author.new({:first_name => "Bobbie", :last_name => "Maggie"})
+      @author.save
+      DB.exec("INSERT INTO authors_books (book_id, author_id) VALUES (1, 1);")
+      DB.exec("INSERT INTO books (title) VALUES ('Hello');")
+      author = Author.find(@author.last_name)
+      expect(Author.books(author.first['id']).count).to eq 1
+    end
+  end
 end
