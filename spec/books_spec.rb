@@ -79,7 +79,7 @@ describe(Book) do
     it("wiil update book title in the database") do
       book = Book.new({:title => "Desert_Solitaire"})
       book.save
-      book.update({:title => "Nemo"})
+      Book.find(book.update({:title => "Nemo"}))
       expect(book.title).to eq "Nemo"
     end
   end

@@ -7,7 +7,7 @@ require('./lib/checkouts')
 require('./lib/patrons')
 require('pg')
 
-DB = PG.connect({:dbname => "library"})
+DB = PG.connect({:dbname => "library_test"})
 
 get('/') do
   erb(:index)
@@ -18,13 +18,25 @@ get('/books') do
   erb(:books)
 end
 
-# get('/books/new') do
-#   erb(:new_book)
-# end
+get('/books/new') do
+  erb(:new_book)
+end
 #
-# post('/books/new') do
-#   title = params[:title]
-#   book = Book.new({:title => 'Nemo'})
-#   book.save()
-#   erb(:thank_you)
-# end
+post('/books/new') do
+  title = params[:title]
+  id = params[:id]
+  book = Book.new({:title => title, :id => id})
+  book.save()
+  erb(:thank_you)
+end
+
+get('/books/:id') do
+  @books = Book.all()
+  title = params[:title]
+  id = params[:id]
+  book = Book.new({:title => title, :id => id})
+  book.save()
+  Book.find(book)
+  book = Book.find(params["id"].to_i())
+  erb(:book)
+end
