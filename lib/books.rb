@@ -18,10 +18,15 @@ class Book
       books
     end
 
-    def book_checkouts
-      DB.exec('SELECT books.title, checkouts.due_date, checkouts.return, checkouts.checkout_date FROM books JOIN books_checkout ON (books.id = books_checkout.book_id) JOIN checkouts ON (checkouts.id = books_checkout.checkout_it) WHERE books.id = 1;')
+    def checkouts(id)
+      DB.exec("SELECT books.title, checkouts.due_date, checkouts.return, checkouts.checkout_date FROM books JOIN books_checkout ON (books.id = books_checkout.book_id) JOIN checkouts ON (checkouts.id = books_checkout.checkout_it) WHERE books.id = #{id};")
+    end
+
+    def find(title)
+      DB.exec("SELECT * FROM books WHERE title = '#{title}';")
     end
   end
+
 
   def ==(other)
     @title == other.title && @id == other.id
@@ -30,4 +35,5 @@ class Book
   def save
    DB.exec("INSERT INTO books (title) VALUES ('#{@title}') RETURNING id;")
   end
+
 end
