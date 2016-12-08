@@ -25,7 +25,13 @@ class Book
     def find(title)
       DB.exec("SELECT * FROM books WHERE title = '#{title}';")
     end
+
+    def authors(id)
+      DB.exec("SELECT authors.first_name, authors.last_name FROM books JOIN authors_books ON (books.id = authors_books.book_id) JOIN authors ON (authors.id = authors_books.author_id) WHERE books.id = #{id};")
+    end
   end
+
+
 
 
   def ==(other)

@@ -19,5 +19,7 @@ RSpec.configure do |config|
 
     DB.exec('ALTER SEQUENCE books_id_seq RESTART WITH 1')
     DB.exec('ALTER SEQUENCE checkouts_id_seq RESTART WITH 1')
+    DB.exec('ALTER SEQUENCE authors_books_id_seq RESTART WITH 1')
+    DB.exec('ALTER SEQUENCE authors_id_seq RESTART WITH 1')
   end
 end
