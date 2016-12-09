@@ -8,14 +8,15 @@ class Book
 
  class << self
     def all
-      returned_books = DB.exec('SELECT * FROM books;')
-      books = []
-      returned_books.each do |book|
-        title = book[@title]
-        id = book[@id].to_i
-        books.push(book)
-      end
-      books
+      # returned_books = DB.exec('SELECT * FROM books;')
+      # books = []
+      # returned_books.each do |book|
+      #   title = book[@title]
+      #   id = book[@id].to_i
+      #   books.push(book)
+      # end
+      # books
+      DB.exec('SELECT * FROM books')
     end
 
     def checkouts(id)
