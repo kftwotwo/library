@@ -37,11 +37,23 @@ class Book
   end
 
   def save
-   DB.exec("INSERT INTO books (title) VALUES ('#{@title}');")
+    begin
+      DB.exec("INSERT INTO books (title) VALUES ('#{@title}');")
+      true
+    rescue StandardError => e
+      puts e.message
+      false
+    end
   end
 
   def delete
-    DB.exec("DELETE FROM books WHERE title = '#{@title}'")
+    begin
+      DB.exec("DELETE FROM books WHERE title = '#{@title}'")
+      true
+    rescue StandardError => e
+      puts e.message
+      false
+    end
   end
 
   def update(attributes)

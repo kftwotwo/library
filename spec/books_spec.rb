@@ -29,7 +29,6 @@ describe(Book) do
   describe '.save' do
     it "will save the book to database" do
       @book = Book.new({:title => "Desert Solitaire"})
-      require 'pry'; binding.pry
       expect(@book.save).to be(true)
     end
   end
@@ -64,16 +63,13 @@ describe(Book) do
     end
   end
 
-  # describe('#delete') do
-  #   it "will delete  book" do
-  #     @book = Book.new({:title => "Desert_Solitaire"})
-  #     @book.save
-  #     @book2 = Book.new({:title => "Nemo"})
-  #     @book2.save
-  #     @book.delete
-  #     expect(Book.all).to eq #
-  #   end
-  # end
+  describe('#delete') do
+    it "will delete  book" do
+      @book = Book.new({:title => "Desert_Solitaire"})
+      @book.save
+      expect(@book.delete).to be true
+    end
+  end
 
   describe("#update") do
     it("wiil update book title in the database") do
